@@ -12,6 +12,7 @@
 		1513D157289F7E1D0029517E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1513D156289F7E1D0029517E /* Assets.xcassets */; };
 		1513D15A289F7E1D0029517E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1513D159289F7E1D0029517E /* Preview Assets.xcassets */; };
 		1558B92628A0E02600661918 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1558B92528A0E02600661918 /* ImagePicker.swift */; };
+		1558B92828A0E8C900661918 /* LiveTextInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1558B92728A0E8C900661918 /* LiveTextInteraction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		1513D156289F7E1D0029517E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1513D159289F7E1D0029517E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1558B92528A0E02600661918 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		1558B92728A0E8C900661918 /* LiveTextInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextInteraction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				1513D152289F7E1C0029517E /* TryLiveTextApp.swift */,
 				1513D154289F7E1C0029517E /* ContentView.swift */,
+				1558B92728A0E8C900661918 /* LiveTextInteraction.swift */,
 				1558B92528A0E02600661918 /* ImagePicker.swift */,
 				1513D156289F7E1D0029517E /* Assets.xcassets */,
 				1513D158289F7E1D0029517E /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1558B92628A0E02600661918 /* ImagePicker.swift in Sources */,
+				1558B92828A0E8C900661918 /* LiveTextInteraction.swift in Sources */,
 				1513D155289F7E1C0029517E /* ContentView.swift in Sources */,
 				1513D153289F7E1C0029517E /* TryLiveTextApp.swift in Sources */,
 			);
@@ -274,6 +278,7 @@
 				DEVELOPMENT_TEAM = 65VW7XZNV5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "撮影のためにカメラを使用します";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "フォトライブラリを使用します";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -304,6 +309,7 @@
 				DEVELOPMENT_TEAM = 65VW7XZNV5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "撮影のためにカメラを使用します";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "フォトライブラリを使用します";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
