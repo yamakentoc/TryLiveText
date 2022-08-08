@@ -39,7 +39,7 @@ struct LiveTextInteraction: UIViewRepresentable {
                     let analysis = try await analyzer.analyze(image, configuration: configuration)
                     interaction.analysis = analysis
                     detectedText = analysis.transcript
-                    imageView.image = targetImage
+                    imageView.image = image
                     print("検出: \(detectedText)")
                 }
             } catch {
