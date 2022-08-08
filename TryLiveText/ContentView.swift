@@ -8,12 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    // ImagePickerを表示するかどうか
+    @State var isShowImagePicker = false
+    // 表示する写真
+    @State var selectedImage: UIImage = UIImage(systemName: "photo")!
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button(action: {
+                isShowImagePicker.toggle()
+            }) {
+                Text("ライブラリから写真選択")
+            }
+            Spacer().frame(height: 20)
+            Button(action: {
+                
+            }) {
+                Text("カメラで撮影")
+            }
+        }
+        .sheet(isPresented: $isShowImagePicker) {
+            ImagePicker(selectedImage: $selectedImage)
         }
     }
 }
