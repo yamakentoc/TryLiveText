@@ -58,7 +58,7 @@ struct ContentView: View {
             isLiveTextSupport = ImageAnalyzer.isSupported
         }
         .sheet(isPresented: $isShowImagePicker) {
-            ImagePicker(selectedImage: $selectedImage)
+            ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
         }
         .alert("Lite Textをサポートしてません", isPresented: $isShowAlert, actions: {})
     }
