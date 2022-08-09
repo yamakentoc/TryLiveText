@@ -1,5 +1,5 @@
 //
-//  ImagePicker.swift
+//  CameraImagePicker.swift
 //  TryLiveText
 //
 //  Created by 山口賢登 on 2022/08/08.
@@ -8,23 +8,22 @@
 import UIKit
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
-    /// 画面を開くかどうか
-    @Environment(\.presentationMode) var presentationMode
+/// カメラで撮影して画像を取得する
+struct CameraImagePicker: UIViewControllerRepresentable {
+    /// viewを閉じるためのプロパティ
+    @Environment(\.dismiss) var dismiss
     /// 選択した写真
     @Binding var selectedImage: UIImage?
-    /// 写真ライブラリとカメラのどちらを起動するか
-    var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<CameraImagePicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
+        picker.sourceType = .camera // .photoLibraryをImagePickerで使用するのはiOS14以降で非推奨なのでPHPikerを使用すべき
         picker.delegate = context.coordinator
         picker.allowsEditing = false
-        picker.sourceType = sourceType
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<CameraImagePicker>) {
     }
     
     func makeCoordinator() -> Coordinator {
@@ -32,9 +31,9 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: ImagePicker
+        let parent: CameraImagePicker
         
-        init(_ parent: ImagePicker) {
+        init(_ parent: CameraImagePicker) {
             self.parent = parent
         }
         
@@ -42,7 +41,11 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let selectedImage = info[.originalImage] as? UIImage {
                 parent.selectedImage = selectedImage
             }
-            parent.presentationMode.wrappedValue.dismiss()
+            parent.dismiss()
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            parent.dismiss()
         }
     }
     

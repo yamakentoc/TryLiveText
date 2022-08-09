@@ -11,16 +11,14 @@ import VisionKit
 struct ContentView: View {
     /// 写真から検出したテキスト
     @State var detectedText = ""
-    /// ImagePickerを表示するか
-    @State var isShowImagePicker = false
+    /// CameraImagePickerを表示するか
+    @State var isShowCameraImagePicker = false
     /// 表示する写真
     @State var selectedImage: UIImage?
     /// LiveTextをサポートしている端末か
     @State var isLiveTextSupport = false
     /// LiveTextをサポートしてない場合のアラートを表示するか
     @State var isShowAlert = false
-    /// 写真ライブラリとカメラのどちらを起動するか
-    @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
     var body: some View {
         VStack {
@@ -37,8 +35,7 @@ struct ContentView: View {
                 if !isLiveTextSupport {
                     isShowAlert = true
                 }
-                sourceType = .photoLibrary
-                isShowImagePicker.toggle()
+                isShowCameraImagePicker.toggle()
             }) {
                 Text("ライブラリから写真選択")
             }
@@ -47,8 +44,7 @@ struct ContentView: View {
                 if !isLiveTextSupport {
                     isShowAlert = true
                 }
-                sourceType = .camera
-                isShowImagePicker.toggle()
+                isShowCameraImagePicker.toggle()
             }) {
                 Text("カメラで撮影")
             }
@@ -57,8 +53,8 @@ struct ContentView: View {
         .onAppear {
             isLiveTextSupport = ImageAnalyzer.isSupported
         }
-        .sheet(isPresented: $isShowImagePicker) {
-            ImagePicker(selectedImage: $selectedImage, sourceType: sourceType)
+        .sheet(isPresented: $isShowCameraImagePicker) {
+            CameraImagePicker(selectedImage: $selectedImage)
         }
         .alert("Lite Textをサポートしてません", isPresented: $isShowAlert, actions: {})
     }
