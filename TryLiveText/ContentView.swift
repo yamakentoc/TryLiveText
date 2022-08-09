@@ -11,6 +11,8 @@ import VisionKit
 struct ContentView: View {
     /// 写真から検出したテキスト
     @State var detectedText = ""
+    /// PhotoLibraryPickerを表示するか
+    @State var isShowPhotoLibraryPicker = false
     /// CameraImagePickerを表示するか
     @State var isShowCameraImagePicker = false
     /// 表示する写真
@@ -35,7 +37,7 @@ struct ContentView: View {
                 if !isLiveTextSupport {
                     isShowAlert = true
                 }
-                isShowCameraImagePicker.toggle()
+                isShowPhotoLibraryPicker.toggle()
             }) {
                 Text("ライブラリから写真選択")
             }
@@ -52,6 +54,9 @@ struct ContentView: View {
         .padding()
         .onAppear {
             isLiveTextSupport = ImageAnalyzer.isSupported
+        }
+        .sheet(isPresented: $isShowPhotoLibraryPicker) {
+            PhotoLibraryPicker(selectedImage: $selectedImage)
         }
         .sheet(isPresented: $isShowCameraImagePicker) {
             CameraImagePicker(selectedImage: $selectedImage)

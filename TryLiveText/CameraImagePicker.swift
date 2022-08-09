@@ -10,9 +10,9 @@ import SwiftUI
 
 /// カメラで撮影して画像を取得する
 struct CameraImagePicker: UIViewControllerRepresentable {
-    /// viewを閉じるためのプロパティ
+    /// Viewを閉じるためのプロパティ
     @Environment(\.dismiss) var dismiss
-    /// 選択した写真
+    /// 撮影した写真
     @Binding var selectedImage: UIImage?
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<CameraImagePicker>) -> UIImagePickerController {
