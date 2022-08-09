@@ -11,7 +11,7 @@ import SwiftUI
 struct TryLiveTextApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(routeData: RouteData())
         }
     }
 }
