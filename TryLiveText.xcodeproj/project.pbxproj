@@ -13,6 +13,7 @@
 		1513D15A289F7E1D0029517E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1513D159289F7E1D0029517E /* Preview Assets.xcassets */; };
 		1558B92628A0E02600661918 /* CameraImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1558B92528A0E02600661918 /* CameraImagePicker.swift */; };
 		1558B92828A0E8C900661918 /* LiveTextInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1558B92728A0E8C900661918 /* LiveTextInteraction.swift */; };
+		1558B92A28A28F2100661918 /* PhotoLibraryImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1558B92928A28F2100661918 /* PhotoLibraryImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		1513D159289F7E1D0029517E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1558B92528A0E02600661918 /* CameraImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraImagePicker.swift; sourceTree = "<group>"; };
 		1558B92728A0E8C900661918 /* LiveTextInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextInteraction.swift; sourceTree = "<group>"; };
+		1558B92928A28F2100661918 /* PhotoLibraryImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				1513D152289F7E1C0029517E /* TryLiveTextApp.swift */,
 				1513D154289F7E1C0029517E /* ContentView.swift */,
 				1558B92728A0E8C900661918 /* LiveTextInteraction.swift */,
+				1558B92928A28F2100661918 /* PhotoLibraryImagePicker.swift */,
 				1558B92528A0E02600661918 /* CameraImagePicker.swift */,
 				1513D156289F7E1D0029517E /* Assets.xcassets */,
 				1513D158289F7E1D0029517E /* Preview Content */,
@@ -145,6 +148,7 @@
 			files = (
 				1558B92628A0E02600661918 /* CameraImagePicker.swift in Sources */,
 				1558B92828A0E8C900661918 /* LiveTextInteraction.swift in Sources */,
+				1558B92A28A28F2100661918 /* PhotoLibraryImagePicker.swift in Sources */,
 				1513D155289F7E1C0029517E /* ContentView.swift in Sources */,
 				1513D153289F7E1C0029517E /* TryLiveTextApp.swift in Sources */,
 			);
