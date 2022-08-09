@@ -48,14 +48,14 @@ struct LiveTextInteraction: UIViewRepresentable {
         }
         Task {
             // 解析対象をテキストのみに絞る
-            let configuration = ImageAnalyzer.Configuration([.text])
-            do {
-                let analysis = try await analyzer.analyze(targetImage, configuration: configuration)
+            let configuration = ImageAnalyzer.Configuration([.text, .machineReadableCode])
+            let analysis = try? await analyzer.analyze(targetImage, configuration: configuration)
+            // 解析が完了したことと、時間経過によって画像他の画像に変わってないことを確認する
+            if let analysis = analysis, targetImage == self.targetImage {
                 interaction.analysis = analysis
+                interaction.preferredInteractionTypes = .automatic
                 detectedText = analysis.transcript
                 print("検出: \(detectedText)")
-            } catch {
-                print("error")
             }
         }
     }
